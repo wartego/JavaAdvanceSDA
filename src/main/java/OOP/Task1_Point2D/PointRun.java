@@ -9,8 +9,5 @@ public class PointRun {
         System.out.println("2D: " + _2d); // nie trzeba wywolywac .toString() na _2d bo domyslnie sie to robi
         System.out.println("3D: " + _3d_a);
         System.out.println("3D: " + _3d_b);
-
-
-
     }
 }
