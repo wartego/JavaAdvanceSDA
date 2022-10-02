@@ -40,14 +40,35 @@ public class ListRunner {
         mySet.forEach(System.out::println);
 //Stream
 
+//        System.out.println("Number from range 20-100");
+//        Consumer myPrint = el -> System.out.println("Moj element : " + el); // wyrazenie lambda
+//
+//        myList.stream()
+////                filter(integer -> integer>=20 && integer <=100)
+//                .filter(el -> el>=20)
+//                .filter(el -> el <=100)
+//                .distinct()
+//                .forEach(System.out::println);
+
+
+        // Druga wersja
+
         System.out.println("Number from range 20-100");
-        Consumer myPrint = el -> System.out.println("Moj element : " + el); // wyrazenie lambda
+        Consumer<Integer> myPrint = el -> System.out.println("Moj element : " + el); // wyrazenie lambda
 
         myList.stream()
 //                filter(integer -> integer>=20 && integer <=100)
                 .filter(el -> el>=20)
                 .filter(el -> el <=100)
                 .distinct()
-                .forEach(System.out::println);
+                .forEach( new myPrintConsumer());
     }
+}
+// bezposrednie implementowanie interfejsu funkcyjnego
+class myPrintConsumer implements Consumer<Integer>{
+    @Override
+    public void accept(Integer el){
+        System.out.println("Moj element : " + el);
+    }
+
 }
