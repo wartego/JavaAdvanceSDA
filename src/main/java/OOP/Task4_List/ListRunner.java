@@ -1,6 +1,7 @@
 package OOP.Task4_List;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 public class ListRunner {
     public static void main(String[] args) {
@@ -40,6 +41,8 @@ public class ListRunner {
 //Stream
 
         System.out.println("Number from range 20-100");
+        Consumer myPrint = el -> System.out.println("Moj element : " + el); // wyrazenie lambda
+
         myList.stream()
 //                filter(integer -> integer>=20 && integer <=100)
                 .filter(el -> el>=20)
